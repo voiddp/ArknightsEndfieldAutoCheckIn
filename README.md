@@ -2,16 +2,12 @@
 
 This is a **Google Apps Script** that automates the daily sign-in process for **Arknights: Endfield** (SKPORT/Gryphline). It runs automatically on Google's servers, so you don't need to keep your computer on.
 
-## Video Setup Tutorial
-
-[![Endfield Auto Daily Check-In](https://img.youtube.com/vi/zGHlOtD7waY/0.jpg)](https://www.youtube.com/watch?v=zGHlOtD7waY)
-
 ---
 
 ## Features
 
 - ✅ **Auto Check-in:** Runs automatically every day (set to 3:00 AM UTC+7 / Asia/Jakarta).
-- 🔒 **Secure:** Runs within your private Google Account.
+- 🔒 **Secure:** Runs within your private Google Account. Use of script properties to store secrets, allows safe sharing of script with google share functionality.
 - 🤖 **Auto Role Detection:** Automatically fetches your in-game profile ID (`sk-game-role`). No complex headers to copy!
 - 💬 **Discord Notifications (Optional):** Sends a message to your server with check-in status, server profiles, and claimed rewards.
 
@@ -41,17 +37,9 @@ The website uses `httpOnly` cookies that cannot be copied via standard browser c
 2. Click **+ New Project**.
 3. Delete any code currently in the editor (e.g., `function myFunction...`).
 4. **Paste** the provided script code into the editor.
-5. At the top of the script, find the configuration section:
-
-   ```javascript
-   const ACCOUNT_NAME = "My Account";
-   const ACCOUNT_TOKEN = decodeURIComponent("YOUR_ACCOUNT_TOKEN_HERE");
-
-   // Leave this empty "" to let the script auto-detect your profile!
-   const SK_GAME_ROLE = "";
-   ```
-
-6. Paste your copied token inside the `ACCOUNT_TOKEN` quotation marks.
+5. At the right of the script, find the menu and settings button.
+6. Open Settings, scroll to bottom and add script properties: "ACCOUNT_TOKEN", "DISCORD_WEBHOOK_URL", "DISCORD_PING_USER_ID".
+7. Paste value of ACCOUNT_TOKEN you copied into value of property you added.
 
 ---
 
@@ -65,12 +53,8 @@ If you want to receive a notification on Discord when the script runs:
 4. Click **New Webhook**.
 5. (Optional) Rename it and give it an avatar.
 6. Click **Copy Webhook URL**.
-7. Go back to your Google Script and find:
-   ```javascript
-   const DISCORD_WEBHOOK_URL = "";
-   ```
-8. Paste the URL inside the quotation marks.
-   - _If you do not want notifications, leave this variable empty: `""`._
+7. Go back to your Google Script settings, script properties and fill value of DISCORD_WEBHOOK_URL
+8. Also "Copy user ID" from right mouse click on user name/avatar menu to copy and fill DISCORD_PING_USER_ID script property to also get discord pings
 
 ---
 
